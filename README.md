@@ -1,30 +1,74 @@
+## Bit-Torrent
+
+* Bit-Torrent is a simple command-line torrent client written in Python. It supports both downloading and seeding of `.torrent` files, manages communication with peers, and ensures data integrity by transferring files in pieces.  
+* This project is designed for educational purposes to showcase how peer-to-peer (P2P) file-sharing protocols like BitTorrent work behind the scenes.  
+* Ideal for anyone interested in networking, distributed systems, or learning the internals of the BitTorrent protocol. The client can be extended with features like UI, encryption, or distributed hash tables (DHT).
+
+## Project Overview :books:
+
+* **Start:** Run `main.py` via terminal with command-line arguments specifying download or seed mode.  
+* **Argument Parsing:** Uses `argparse` and `sys.argv` to process input commands.  
+* **Client Initialization:** Creates an instance of the BitTorrent client to manage the session.  
+* **Torrent File Processing:** Reads the `.torrent` file to extract metadata including trackers, file info, and piece hashes.  
+* **Tracker Communication:** Contacts tracker servers to retrieve a list of peers participating in the swarm.  
+* **Peer Swarm Setup:** Establishes connections with available peers.  
+* **Mode Selection:** Based on user input, switches to download or seeding mode.
+
+* **Download Mode:**  
+  * Creates an empty file ready to receive pieces.  
+  * Adds the file handler to the peer swarm and starts downloading.  
+  * Requests and downloads pieces from peers.  
+  * Validates each piece using hash checks to ensure data integrity.  
+  * Writes verified pieces to disk.  
+  * Marks download as complete after all pieces are received.
+
+* **Seeding Mode:**  
+  * Opens the complete file for reading.  
+  * Shares the file with other peers in the network.  
+  * Responds to incoming requests for pieces.  
+  * Continues seeding to support the swarm.
+
+* After download or seeding, the client continuously handles peer messages such as keep-alives, choke/unchoke signals, and piece availability updates.
+
 ## Installation and Build :hammer_and_wrench:
 
-* If you don't have pipenv package then install it using command, else ignore below command
-```
-    $ pip3 install pipenv
-```
+* If you don’t have the `pipenv` package installed, install it using the command below, otherwise ignore:  
+$ pip3 install pipenv
+cpp
+Copy
+Edit
 
-* Enter the virtual enviornment and install all dependencies 
-```
-    $ pipenv shell
-    $ pipenv install --dev
-```
+* Activate the virtual environment and install all required dependencies:  
+ruby
+Copy
+Edit
+$ pipenv shell
+$ pipenv install --dev
+
 
 ## Run :computer:
 
-* Change directory to source in bittorrent folder and inorder to display help options 
-```
-    $ cd src
-    $ python3 main.py --help
-```
+* Change directory to `src` inside the Bit-Torrent folder to view help and usage options:  
 
-* Example for downloading torrent file given destination path for downloading file
-```
-    $ python3 main.py input_file.torrent -d destination_path/
-```
+$ cd src
+$ python3 main.py --help
 
-* Example for seeding torrent file given given destination path of existing file
-```
-    $ python3 main.py input_file.torrent -s existing_file_path/
-```
+
+* Example to download a file from a torrent by specifying the destination path:  
+
+$ python3 main.py input_file.torrent -d destination_path/
+
+
+* Example to seed an existing file by specifying the path to the file:  
+
+$ python3 main.py input_file.torrent -s existing_file_path/
+
+
+## Why This Project?
+
+* This Bit-Torrent client provides practical insight into decentralized file sharing. It covers all key elements from tracker communication to peer connection and piece-by-piece file transfer.  
+* Recruiters and developers reviewing this project will appreciate your knowledge in:  
+  * Networking protocols (TCP/UDP with peers and trackers)  
+  * Handling file input/output and chunk-wise data processing  
+  * Managing asynchronous events in real-time systems  
+  * Building clean command-line tools with modular Python code
