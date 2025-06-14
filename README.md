@@ -4,7 +4,7 @@
 * This project is designed for educational purposes to showcase how peer-to-peer (P2P) file-sharing protocols like BitTorrent work behind the scenes.  
 * Ideal for anyone interested in networking, distributed systems, or learning the internals of the BitTorrent protocol. The client can be extended with features like UI, encryption, or distributed hash tables (DHT).
 
-## Project Overview :books:
+## Project Overview :
 
 * **Start:** Run `main.py` via terminal with command-line arguments specifying download or seed mode.  
 * **Argument Parsing:** Uses `argparse` and `sys.argv` to process input commands.  
@@ -30,7 +30,7 @@
 
 * After download or seeding, the client continuously handles peer messages such as keep-alives, choke/unchoke signals, and piece availability updates.
 
-## Installation and Build :hammer_and_wrench:
+## Installation and Build :
 
 * If you don’t have the `pipenv` package installed, install it using the command below, otherwise ignore:  
 $ pip3 install pipenv
@@ -46,7 +46,7 @@ $ pipenv shell
 $ pipenv install --dev
 
 
-## Run :computer:
+## Run :
 
 * Change directory to `src` inside the Bit-Torrent folder to view help and usage options:  
 
