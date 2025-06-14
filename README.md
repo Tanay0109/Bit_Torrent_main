@@ -64,11 +64,3 @@ $ python3 main.py input_file.torrent -d destination_path/
 $ python3 main.py input_file.torrent -s existing_file_path/
 
 
-## Why This Project?
-
-* This Bit-Torrent client provides practical insight into decentralized file sharing. It covers all key elements from tracker communication to peer connection and piece-by-piece file transfer.  
-* Recruiters and developers reviewing this project will appreciate your knowledge in:  
-  * Networking protocols (TCP/UDP with peers and trackers)  
-  * Handling file input/output and chunk-wise data processing  
-  * Managing asynchronous events in real-time systems  
-  * Building clean command-line tools with modular Python code
